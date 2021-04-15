@@ -2,7 +2,7 @@ package ru.netology.stats;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class StatisticsServiceTest {
     @Test
@@ -26,7 +26,7 @@ class StatisticsServiceTest {
     }
 
     @Test
-    void shouldCalculateFindMax(){
+    void shouldCalculateFindMax() {
         StatsService service = new StatsService();
         int[] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 5;
@@ -36,7 +36,7 @@ class StatisticsServiceTest {
     }
 
     @Test
-    void shouldCalculateFindMin(){
+    void shouldCalculateFindMin() {
         StatsService service = new StatsService();
         int[] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 9;
@@ -46,7 +46,7 @@ class StatisticsServiceTest {
     }
 
     @Test
-    void calculateBelowAverage(){
+    void calculateBelowAverage() {
         StatsService service = new StatsService();
         int[] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 5;
@@ -56,7 +56,7 @@ class StatisticsServiceTest {
     }
 
     @Test
-    void calculateAboveAverageSales(){
+    void calculateAboveAverageSales() {
         StatsService service = new StatsService();
         int[] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 5;

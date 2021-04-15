@@ -52,11 +52,11 @@ public class StatsService {
     public int calculateBelowAverageSales(int[] values) {
         int monthAmount = 0;
         int sum = 0;
-        for (int monthValue : values ){
-            sum +=monthValue;
+        for (int monthValue : values) {
+            sum += monthValue;
         }
-        for (int monthValue : values){ //Кол-во месяцев, в которых продажи были ниже среднего (см. п.2)
-            if (monthValue < this.calculateAverage(values)){
+        for (int monthValue : values) { //Кол-во месяцев, в которых продажи были ниже среднего (см. п.2)
+            if (monthValue < this.calculateAverage(values)) {
                 monthAmount += 1;
             }
         }
@@ -66,11 +66,11 @@ public class StatsService {
     public int calculateAboveAverageSales(int[] values) { //Кол-во месяцев, в которых продажи были выше среднего
         int monthAmount = 0;
         int sum = 0;
-        for (int monthValue : values ){
-            sum +=monthValue;
+        for (int monthValue : values) {
+            sum += monthValue;
         }
-        for (int monthValue : values){
-            if (monthValue > this.calculateAverage(values)){
+        for (int monthValue : values) {
+            if (monthValue > this.calculateAverage(values)) {
                 monthAmount += 1;
             }
         }
