@@ -34,7 +34,16 @@ public class StatsService {
         }
         return month + 1;
     }
+    private static int Sum(int[] data) {
+        int Sum = calculateAverage(data);
 
+        for (int number : data) {
+            if (number >= Sum) {
+                Sum = number;
+            }
+        }
+        return Sum;
+    }
 
     public static int calculateFindMin(int[] statsData) { //Номер месяца, в котором был минимум продаж (осуществлены продажи на минимальную сумму)*
         int month = 1;
@@ -75,14 +84,4 @@ public class StatsService {
         return monthAmount;
     }
 
-    private static int Sum(int[] data) {
-        int Sum = calculateAverage(data);
-
-        for (int number : data) {
-            if (number >= Sum) {
-                Sum = number;
-            }
-        }
-        return Sum;
-    }
 }
