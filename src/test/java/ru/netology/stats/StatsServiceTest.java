@@ -32,7 +32,7 @@ class StatisticsServiceTest {
 
         int actual = statsService.calculateFindMax(statsData);
         assertEquals(expected, actual);
-        System.out.println("Максимум продаж: " + actual);
+        System.out.println("Месяц с максимум продаж: " + actual);
     }
 
     @Test
@@ -41,7 +41,7 @@ class StatisticsServiceTest {
 
         int actual = StatsService.calculateFindMin(statsData);
         assertEquals(expected, actual);
-        System.out.println("Минимум продаж: " + actual);
+        System.out.println("Месяц с минимум продаж: " + actual);
     }
 
     @Test
