@@ -25,24 +25,26 @@ public class StatsService {
     }
 
     public static int calculateFindMax(int[] statsData) { //Номер месяца, в котором был пик продаж (осуществлены продажи на максимальную сумму)
-        int Sum = Sum(statsData);
+        int max = findMax(statsData);
         int month = statsData[0];
         for (int i = 0; i < statsData.length; i++) {
-            if (statsData[i] == Sum) {
+            int findMax = 0;
+            if (statsData[i] == findMax) {
                 month = i;
             }
         }
-        return month + 1;
+        return month;
     }
-    private static int Sum(int[] data) {
-        int Sum = calculateAverage(data);
 
-        for (int number : data) {
-            if (number >= Sum) {
-                Sum = number;
+    private static int findMax(int[] statsData) {
+        int max = calculateAverage(statsData);
+
+        for (int number : statsData) {
+            if (max < number) {
+                max = number;
             }
         }
-        return Sum;
+        return max;
     }
 
     public static int calculateFindMin(int[] statsData) { //Номер месяца, в котором был минимум продаж (осуществлены продажи на минимальную сумму)*
@@ -56,29 +58,23 @@ public class StatsService {
         return month;
     }
 
-    public static int calculateBelowAverageSales(int[] values) { //Кол-во месяцев, в которых продажи были ниже среднего (см. п.2)
+    public static int calculateBelowAverageSales(int[] statsData) { //Кол-во месяцев, в которых продажи были ниже среднего (см. п.2)
+        int average = calculateAverage(statsData);
         int monthAmount = 0;
-        int sum = 0;
-        for (int monthValue : values) {
-            sum += monthValue;
-        }
-        for (int monthValue : values) {
-            if (monthValue < calculateAverage(values)) {
-                monthAmount += 1;
+        for (int monthValue : statsData) {
+            if (monthValue > average) {
+                monthAmount ++;
             }
         }
         return monthAmount;
     }
 
-    public static int calculateAboveAverageSales(int[] values) { //Кол-во месяцев, в которых продажи были выше среднего
+    public static int calculateAboveAverageSales(int[] statsData) { //Кол-во месяцев, в которых продажи были выше среднего
+        int average = calculateAverage(statsData);
         int monthAmount = 0;
-        int sum = 0;
-        for (int monthValue : values) {
-            sum += monthValue;
-        }
-        for (int monthValue : values) {
-            if (monthValue > calculateAverage(values)) {
-                monthAmount += 1;
+        for (int monthValue : statsData) {
+            if (monthValue < average) {
+                monthAmount ++;
             }
         }
         return monthAmount;
