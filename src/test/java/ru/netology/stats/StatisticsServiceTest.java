@@ -11,7 +11,6 @@ class StatisticsServiceTest {
     @Test
     void shouldCalculateSum() {
         int expected = 180;
-
         int actual = statsService.calculateSum(statsData);
         assertEquals(expected, actual);
         System.out.println("Сумма всех продаж: " + actual);
@@ -20,7 +19,6 @@ class StatisticsServiceTest {
     @Test
     void shouldCalculateAverage() {
         int expected = 15;
-
         int actual = statsService.calculateAverage(statsData);
         assertEquals(expected, actual);
         System.out.println("Средняя сумма продаж в месяц: " + actual);
@@ -29,7 +27,6 @@ class StatisticsServiceTest {
     @Test
     void shouldCalculateFindMax() {
         int expected = 8;
-
         int actual = statsService.calculateFindMax(statsData);
         assertEquals(expected, actual);
         System.out.println("Месяц с максимум продаж: " + actual);
@@ -38,7 +35,6 @@ class StatisticsServiceTest {
     @Test
     void shouldCalculateFindMin() {
         int expected = 9;
-
         int actual = StatsService.calculateFindMin(statsData);
         assertEquals(expected, actual);
         System.out.println("Месяц с минимум продаж: " + actual);
@@ -47,7 +43,6 @@ class StatisticsServiceTest {
     @Test
     void calculateBelowAverageSales() {
         int expected = 5;
-
         int actual = StatsService.calculateBelowAverageSales(statsData);
         assertEquals(expected, actual);
         System.out.println("Продажи ниже среднего: " + actual);

@@ -6,11 +6,8 @@ package ru.netology.stats;
 //  // таким образом для первого значения month = 1
 //  month = month + 1; // в сокращённой записи: month += 1 или month++
 //  // TODO: дальше работаете с value, зная, что номер месяца хранится в month
-//}
 
 public class StatsService {
-
-
     public static int calculateSum(int[] values) { // Сумма всех продаж
         int month = 0;
         for (int value : values) {
@@ -18,7 +15,6 @@ public class StatsService {
         }
         return month;
     }
-
 
     public static int calculateAverage(int[] values) { // Среднюя сумма продаж в месяц
         return calculateSum(values) / values.length;
@@ -79,5 +75,4 @@ public class StatsService {
         }
         return monthAmount;
     }
-
 }
